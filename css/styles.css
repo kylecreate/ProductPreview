@@ -1,0 +1,207 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Global CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styling with Root */
+:root {
+    /* Colors */
+    --clr-darkcyan: hsl(158, 36%, 37%);
+    --clr-cream: hsl(30, 38%, 92%);
+
+    --clr-darkblue: hsl(212, 21%, 14%);
+    --clr-darkgreyblue: hsl(228, 12%, 48%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --clr-button-hover: hsl(158, 36%, 23%);
+
+    /* Fonts */
+    --FF-Fraunces: "Fraunces", serif;
+    --FF-Montserrat: "Montserrat", sans-serif;
+
+    --FW-500: 500;
+    --FW-700: 700;
+}
+
+/* General Styles */
+body {
+    font-family: var(--FF-Montserrat);
+    background-color: var(--clr-cream);
+    font-size: 0.875em;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 1.875em auto;
+    padding: 0 1.875em;
+}
+
+.grid {
+    max-width: 43.75em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--clr-white);
+    border-radius: 0.938em;
+    overflow: hidden;
+}
+
+/* Image */
+.img img {
+    max-width: 100%;
+    display: inherit;
+}
+
+/* Overall Content */
+.card-content {
+    padding: 2.188em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Product Info */
+.product-category {
+    text-transform: uppercase;
+    letter-spacing: 0.188em;
+    font-size: 0.813em;
+    color: var(--clr-darkgreyblue);
+    font-weight: var(--FW-500);
+}
+
+.product-name {
+    font-family: var(--FF-Fraunces);
+    font-size: 2.125em;
+    line-height: 1em;
+    color: var(--clr-darkblue);
+}
+
+.product-description {
+    color: var(--clr-darkgreyblue);
+    line-height: 1.6em;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.current-price {
+    font-family: var(--FF-Fraunces);
+    font-weight: var(--FW-700);
+    color: var(--clr-darkcyan);
+    font-size: 1.9em;
+    padding-right: 1.1em;
+}
+
+.old-price {
+    color: var(--clr-darkgreyblue);
+    text-decoration: line-through;
+    font-size: 1.3em;
+}
+
+/* Add to Cart Button */
+.cta {
+    background-color: var(--clr-darkcyan);
+    border: none;
+    padding: 0.875em 0;
+    border-radius: 0.75em;
+    color: var(--clr-white);
+    font-size: 0.875em;
+    font-weight: var(--FW-700);
+    transition: background-color .2s ease;
+    width: 100%;
+}
+
+.cta img {
+    padding-right: 0.438em;
+}
+
+.cta:hover {
+    cursor: pointer;
+    background-color: var(--clr-button-hover);
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Medium Sized Screens */
+@media only screen and (max-width: 39.25em) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .img img {
+        max-height: 28.125em;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-content {
+        display: block;
+    }
+
+    .product-category, .product-name, .product-description .price {
+        padding-bottom: 1.438em;
+    }
+}
+
+/* Small Size Screens */
+@media only screen and (max-width: 23.438em) {
+
+    .container {
+        margin: 0.938em auto;
+        padding: 0 0.938em;
+    }
+
+    .img img {
+        max-height: 18.125em;
+    }
+
+    .card-content {
+        padding: 1.5em;
+    }
+
+    .product-category, .product-name, .product-description .price {
+        padding-bottom: 1em;
+    }
+
+    .product-name {
+        font-size: 1.75em;
+    }
+
+    .product-description {
+        font-size: 0.85em;
+        padding-bottom: 0.75em;
+    }
+
+    .current-price {
+        padding-bottom: 0.75em;
+        font-size: 1.75em;
+    }
+
+    .old-price {
+        margin-top: -1em;
+    }
+
+    .cta {
+        font-size: 0.813em;
+    }
+}
